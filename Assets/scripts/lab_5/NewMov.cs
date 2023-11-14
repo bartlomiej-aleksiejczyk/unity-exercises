@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveWithCharacterVelocity : MonoBehaviour
+public class NewMov : MonoBehaviour
 {
     private CharacterController controller;
     private Vector3 playerVelocity;
@@ -38,5 +38,9 @@ public class MoveWithCharacterVelocity : MonoBehaviour
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
+    }
+    public void ThrowPlayer(Vector3 force)
+    {
+        playerVelocity.y += force.y;
     }
 }
